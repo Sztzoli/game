@@ -20,18 +20,31 @@ class GameRepositoryTest {
 
     @Test
     void addList() {
-        Game game = new Game("Turkey","Italy",0,3);
+        Game game = new Game("Turkey", "Italy", 0, 3);
         gameRepository.addGame(game);
 
         assertThat(gameRepository.getGames())
                 .hasSize(1)
-                .extracting(Game::getFirstCounty,Game::getSecondCounty)
-                .contains(tuple("Turkey","Italy"));
+                .extracting(Game::getFirstCounty, Game::getSecondCounty)
+                .contains(tuple("Turkey", "Italy"));
     }
 
-//    @Test
-//    void assListFromCsv() {
-//        InputStream = getClass().getResourceAsStream("results.csv");
-//    }
+    @Test
+    void assListFromCsv() {
+
+        gameRepository.addGame("results.csv");
+
+        assertThat(gameRepository.getGames())
+                .isNotNull()
+                .hasSize(15)
+                .extracting(Game::getFirstCounty, Game::getSecondCounty)
+                .contains(tuple("Turkey", "Italy"));
+    }
+
+
+
+
+
+
 
 }

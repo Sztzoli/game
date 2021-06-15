@@ -18,8 +18,8 @@ public class GameRepository {
         games.add(game);
     }
 
-    public void addGame(InputStream inputStream) {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+    public void addGame(String path) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/"+path)))) {
             reader.lines().map(Game::convertTo).forEach(games::add);
         } catch (IOException ioException) {
             throw new IllegalArgumentException("File cannot read", ioException);

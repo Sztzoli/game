@@ -2,7 +2,6 @@ package game;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class GameService {
 
@@ -16,7 +15,7 @@ public class GameService {
         int maxDifference = 0;
         Game maxDiff = null;
         for (Game game : gameRepository.getGames()) {
-            int difference = Math.abs(game.getFirstCountyScore() - game.getSecondCountyScore());
+            int difference = Math.abs(game.getFirstCountyScore()- game.getSecondCountyScore());
             if (difference > maxDifference) {
                 maxDifference = difference;
                 maxDiff = game;
@@ -25,24 +24,13 @@ public class GameService {
         return maxDiff;
     }
 
-
     public int sumGoalOfCountry(String country) {
         int sum = 0;
-
         for (Game game : gameRepository.getGames()) {
-            if (game.getFirstCounty().equals(country)) {
-                sum++;
-            } else if (game.getSecondCounty().equals(country)) {
-                sum++;
-            }
+            
         }
-        return sum;
     }
 
-    public String mostGoalScored() {
-        int mostGoal = 0;
-        String country = "";
-        //Map<String, Integer> games = gameRepository.getGames().stream()
 
-    }
+
 }
