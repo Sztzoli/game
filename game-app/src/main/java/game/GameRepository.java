@@ -1,5 +1,7 @@
 package game;
 
+import lombok.Getter;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class GameRepository {
 
     private List<Game> games = new ArrayList<>();
@@ -22,5 +25,7 @@ public class GameRepository {
             throw new IllegalArgumentException("File cannot read", ioException);
         }
     }
+
+
 
 }
