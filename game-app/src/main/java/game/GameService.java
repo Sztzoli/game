@@ -26,8 +26,12 @@ public class GameService {
 
     public int sumGoalOfCountry(String country) {
         int sum = 0;
-        for (Game game : gameRepository.games) {
-            
+        for (Game game : gameRepository.) {
+            if (game.getFirstCounty().equals(country)) {
+                sum++;
+            } else if (game.getSecondCounty().equals(country)) {
+                sum++;
+            }
         }
     }
 
