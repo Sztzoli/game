@@ -24,12 +24,12 @@ public class GameService {
         return maxDiff;
     }
 
-    public int sumGoalOfCountry(String country) {
-        int sum = 0;
-        for (Game game : gameRepository.getGames()) {
-            
-        }
-    }
+//    public int sumGoalOfCountry(String country) {
+//        int sum = 0;
+//        for (Game game : gameRepository.getGames()) {
+//
+//        }
+//    }
 
 
 
