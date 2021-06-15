@@ -14,8 +14,8 @@ public class GameService {
     public Game biggestGoalDifference() {
         int maxDifference = 0;
         Game maxDiff = null;
-        for (Game game : gameRepository.games) {
-            int difference = Math.abs(game.firstCountryScore - game.secondCountryScore);
+        for (Game game : gameRepository.getGames()) {
+            int difference = Math.abs(game.getFirstCountyScore() - game.getSecondCountyScore());
             if (difference > maxDifference) {
                 maxDifference = difference;
                 maxDiff = game;
@@ -24,17 +24,19 @@ public class GameService {
         return maxDiff;
     }
 
+
     public int sumGoalOfCountry(String country) {
         int sum = 0;
-        for (Game game : gameRepository.) {
+
+        for (Game game : gameRepository.getGames()) {
             if (game.getFirstCounty().equals(country)) {
                 sum++;
             } else if (game.getSecondCounty().equals(country)) {
                 sum++;
             }
         }
+        return sum;
     }
 
-
-
+    
 }
