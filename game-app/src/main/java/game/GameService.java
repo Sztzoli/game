@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class GameService {
 
@@ -38,5 +39,10 @@ public class GameService {
         return sum;
     }
 
-    
+    public String mostGoalScored() {
+        int mostGoal = 0;
+        String country = "";
+        //Map<String, Integer> games = gameRepository.getGames().stream()
+
+    }
 }
