@@ -20,12 +20,16 @@ public class Game {
     }
 
     public String getWinnerName() {
-        if (firstCountyScore > secondCountyScore) {
+        if (difference()>0) {
             return firstCounty;
         }
-        if (secondCountyScore < firstCountyScore) {
+        if (difference()<0) {
             return secondCounty;
         }
         return "Draw";
+    }
+
+    public int difference() {
+        return firstCountyScore-secondCountyScore;
     }
 }

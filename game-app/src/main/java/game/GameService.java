@@ -1,7 +1,9 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class GameService {
 
@@ -27,9 +29,19 @@ public class GameService {
     public int sumGoalOfCountry(String country) {
         int sum = 0;
         for (Game game : gameRepository.getGames()) {
-            
+
         }
     }
+    public Game biggestGoalDifference2() {
+        Optional<Game> max = gameRepository.getGames().stream().max(Comparator.comparing(game -> Math.abs(game.difference())));
+        if (max.isEmpty()){
+            throw new IllegalArgumentException("List is empty");
+        }
+        return max.get();
+    }
+
+
+
 
 
 
